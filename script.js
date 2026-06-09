@@ -1,6 +1,6 @@
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("mapCanvas")
 const ctx = canvas.getContext("2d");
-const container = document.getElementById(".mainContainer");
+const container = document.querySelectorAll(".mainContainer");
 const floatingMenu = document.getElementById("floatingMenu");
 const btnDownload = document.getElementById("btnDownload");
 const btnFind  = document.getElementById("btnFind");
@@ -19,22 +19,43 @@ let offsetX = 0, offsetY = 0;
 
 let bgImage = null;
 
-function resizeCanvas() {
-    const rect = container.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
-}
+// function resizeCanvas() {
+//     const rect = container.getBoundingClientRect();
+//     canvas.width = rect.width;
+//     canvas.height = rect.height;
+// }
 
-window.addEventListener("resize", resizeCanvas);
+// window.addEventListener("resize", resizeCanvas);
 
-resizeCanvas();
+// resizeCanvas();
 
 function worldToCanvas() {
     const scaleX = canvas.width / IMG_WIDTH;
     const scaleY = canvas.height / IMG_HEIGHT;
+    return {
+        x : (x * scaleX) + offsetX,
+        y : (y * scaleY) + offsetY
+    };
 }
 
-// document.addEventListener("dblclick", (e) => {
-//    const addLocation = document.getElementById("addLocation").classList.remove("hidden");
-// });
+function canvasToWorld() {
+    const scaleX = canvas.width / IMG_WIDTH;
+    const scaleY = canvas.height / IMG_HEIGHT;
+    return {
+        x : (x - offsetX) / scaleX,
+        y : (y - offsetY) / scaleY
+    };
+}
+
+canvas.addEventListener("dblclick", (e) => {
+        document.getElementById("addLocation").classList.remove("hidden");
+});
+
+function loadBackground() {
+    const img =  new Image();
+    img.src = "background.jpg";
+}
+
+loadBackground();
+
 
