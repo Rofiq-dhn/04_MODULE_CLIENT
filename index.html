@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LKS_WEB_TECHNOLOGY</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="maincontainer">
@@ -11,11 +12,16 @@
     </div>
 
     <div class="floating-menu" id="floating-menu">
-        <button><img src="icons/download.svg" class="download-icon"></button>
-        <button><img src="" class="download-icon"></button>
-        <button><img src="icons/download.svg" class="download-icon"></button>
-        <button><img src="icons/download.svg" class="download-icon"></button>
-        <button><img src="icons/download.svg" class="download-icon"></button>
+        <button id="btnDownload"><img src="icons/download.svg" class="download-icon"> download map</button>
+        <button id="btnFind"><img src="icons/find_path.svg" class="download-icon"> Find Path</button>
+        <button id="btnConnect" disabled><img src="icons/connect.svg" class="download-icon"> Connect</button>
+        <button id="btnDelete" disabled><img src="icons/delete.svg" class="download-icon"> Delete</button>
+        <button id="btnClear"><img src="icons/empty.svg" class="download-icon"> Clear</button>
+    </div>
+    
+    <div id="addLocation" class="add-location hidden">
+        <input type="text" id="inputLocation" placeholder="Please input location .... ">
+        <button id="btnCreate" class="btn-create">Create</button>
     </div>
 </body>
 </html>
