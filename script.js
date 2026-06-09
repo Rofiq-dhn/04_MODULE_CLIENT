@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 const container = document.querySelectorAll(".mainContainer");
 const floatingMenu = document.getElementById("floatingMenu");
 const btnDownload = document.getElementById("btnDownload");
-const btnFind  = document.getElementById("btnFind");
+const btnFind = document.getElementById("btnFind");
 const btnConnect = document.getElementById("btnConnect");
 const btnDelete = document.getElementById("btnDelete");
 const btnClear = document.getElementById("btnClear");
@@ -34,8 +34,8 @@ function worldToCanvas() {
     const scaleX = canvas.width / IMG_WIDTH;
     const scaleY = canvas.height / IMG_HEIGHT;
     return {
-        x : (x * scaleX) + offsetX,
-        y : (y * scaleY) + offsetY
+        x: (x * scaleX) + offsetX,
+        y: (y * scaleY) + offsetY
     };
 }
 
@@ -43,21 +43,21 @@ function canvasToWorld() {
     const scaleX = canvas.width / IMG_WIDTH;
     const scaleY = canvas.height / IMG_HEIGHT;
     return {
-        x : (x - offsetX) / scaleX,
-        y : (y - offsetY) / scaleY
+        x: (x - offsetX) / scaleX,
+        y: (y - offsetY) / scaleY
     };
 }
 
 document.addEventListener("dblclick", (e) => {
-        document.getElementById("addLocation").classList.remove("hidden");
+    document.getElementById("addLocation").classList.remove("hidden");
 });
 
-// document.addEventListener("btnCancel", (e) => {
-//     document.getElementById("addLocation").classList.
-// });
+btnCancel.addEventListener("click", (e) => {
+    document.getElementById("addLocation").classList.add("hidden");
+})
 
 function loadBackground() {
-    const img =  new Image();
+    const img = new Image();
     img.src = "background.jpg";
 }
 
