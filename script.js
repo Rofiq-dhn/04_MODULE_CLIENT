@@ -8,6 +8,7 @@ const btnConnect = document.getElementById("btnConnect");
 const btnDelete = document.getElementById("btnDelete");
 const btnClear = document.getElementById("btnClear");
 const btnCreate = document.getElementById("btnCreate");
+const btnCancel = document.getElementById("btnCancelCreate")
 const IMG_WIDTH = 7001;
 const IMG_HEIGHT = 4001;
 
@@ -19,15 +20,15 @@ let offsetX = 0, offsetY = 0;
 
 let bgImage = null;
 
-// function resizeCanvas() {
-//     const rect = container.getBoundingClientRect();
-//     canvas.width = rect.width;
-//     canvas.height = rect.height;
-// }
+function resizeCanvas() {
+    const rect = container
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+}
 
-// window.addEventListener("resize", resizeCanvas);
+window.addEventListener("resize", resizeCanvas);
 
-// resizeCanvas();
+resizeCanvas();
 
 function worldToCanvas() {
     const scaleX = canvas.width / IMG_WIDTH;
@@ -47,9 +48,13 @@ function canvasToWorld() {
     };
 }
 
-canvas.addEventListener("dblclick", (e) => {
+document.addEventListener("dblclick", (e) => {
         document.getElementById("addLocation").classList.remove("hidden");
 });
+
+// document.addEventListener("btnCancel", (e) => {
+//     document.getElementById("addLocation").classList.
+// });
 
 function loadBackground() {
     const img =  new Image();
